@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.1/dist/conversational-form.min.js"
+        crossorigin></script>
+    <style>
+        #cf-context {
+            width: 100%;
+            height: 100vh;
+        }
+
+        #form {
+            height: 0px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+    </datalist>
+    <form action="/sample" method="POST" id="form" cf-form>
+
+        <input type="number" required cf-error="Must be between 3 and 5" name="input_1" cf-questions="enter number" />
+        <input type="number" required cf-error="Must be between 3 and 5" name="input_2" cf-questions="enter number" />
+        <input type="number" required cf-error="Must be between 3 and 5" name="input_3" cf-questions="enter number" />
+        <input type="number" required cf-error="Must be between 3 and 5" name="input_4" cf-questions="enter number" />
+        <input type="number" required cf-error="Must be between 3 and 5" name="input_5" cf-questions="enter number" />
+        <input type="number" required cf-error="Must be between 3 and 5" name="input_6" cf-questions="enter number" />
+        <input type="number" required cf-error="Must be between 3 and 5" name="input_7" cf-questions="enter number" />
+        <input type="number" required cf-error="Must be between 3 and 5" name="input_8" cf-questions="enter number" />
+
+
+
+    </form>
+    <div id="cf-context" role="cf-context" cf-context></div>
+
+
+
+</body>
+
+</html>
