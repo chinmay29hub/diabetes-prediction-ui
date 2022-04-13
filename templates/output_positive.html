@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.1/dist/conversational-form.min.js"
+        crossorigin></script>
+    <style>
+        #cf-context {
+            width: 100%;
+            height: 100vh;
+        }
+
+        #form {
+            height: 0px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form" cf-form>
+        <cf-robot-message cf-questions="Your report is here"></cf-robot-message>
+        <cf-robot-message cf-questions="You have high probability of being diabetic in future"></cf-robot-message>
+        <cf-robot-message cf-questions="You still have time to take action,Work on bringing your BMI in healthy range">
+        </cf-robot-message>
+        <cf-robot-message
+            cf-questions="Insulin,blood pressure and glucose levels should be regularly tested and effort should be taken to keen them in healthy range">
+        </cf-robot-message>
+        <cf-robot-message
+            cf-questions="You can also check your result on our streamlit model to know where you stand in comparison to others in term of health figures">
+        </cf-robot-message>
+        <cf-robot-message cf-questions="Wish you a healthy future"></cf-robot-message>
+        <label for="radio">
+            <input cf-questions="Go back to homepage?" cf-label="Yes" type="radio" value="0" />
+            <a href="/">Yes</a>
+        </label>
+
+    </form>
+    <div id="cf-context" role="cf-context" cf-context></div>
+</body>
+
+</html>

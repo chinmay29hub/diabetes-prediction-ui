@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.1/dist/conversational-form.min.js"
@@ -21,35 +21,80 @@
         }
     </style>
 </head>
+<!-- Pregnancies Glucose BloodPressure SkinThickness Insulin BMI
+  DiabetesPedigreeFunction Age -->
 
 <body>
-
-
-    <datalist id="browsers">
-        <option value="Internet Explorer">
-        <option value="Firefox">
-        <option value="Chrome">
-        <option value="Opera">
-        <option value="Safari">
-    </datalist>
     <form action="/sample" method="POST" id="form" cf-form>
+        <cf-robot-message cf-questions="Hello I am your doctor"></cf-robot-message>
 
-        <input type="number" required cf-error="Must be between 3 and 5" name="input_1" cf-questions="enter number" />
-        <input type="number" required cf-error="Must be between 3 and 5" name="input_2" cf-questions="enter number" />
-        <input type="number" required cf-error="Must be between 3 and 5" name="input_3" cf-questions="enter number" />
-        <input type="number" required cf-error="Must be between 3 and 5" name="input_4" cf-questions="enter number" />
-        <input type="number" required cf-error="Must be between 3 and 5" name="input_5" cf-questions="enter number" />
-        <input type="number" required cf-error="Must be between 3 and 5" name="input_6" cf-questions="enter number" />
-        <input type="number" required cf-error="Must be between 3 and 5" name="input_7" cf-questions="enter number" />
-        <input type="number" required cf-error="Must be between 3 and 5" name="input_8" cf-questions="enter number" />
+        <label for="radio">
+            <input cf-questions="Let's begin the test" cf-label="Yes, let's begin!" type="radio" value="0" />
+            Start
+        </label>
 
+        <fieldset cf-questions="What is your gender">
+            <label for="male">Male
+                <input type="radio" name="cfc-intro" id="intro-yes" value="Male" />
+            </label>
+            <label for="Transgender">Transgender
+                <input type="radio" name="cfc-intro" id="intro-no" value="Transgender" />
+            </label>
+            <label for="Female">Female
+                <input type="radio" name="cfc-intro" id="intro-no" value="Female" />
+            </label>
+        </fieldset>
+        <input type="number" id="Pregnancies" name="Pregnancies"
+            cf-questions="Please enter the number number of Pregnancies.If you wish to know your chances of having diabetes after Pregnancy,then enter that number"
+            cf-conditional-cfc-intro="Female" />
 
+        <input type="number" required cf-error="Please enter a number" name="glucose" id="glucose"
+            cf-questions="Please enter your recent glucose readings(After Fasting)" />
 
+        <input type="number" required cf-error="Please enter a number" name="BloodPressure" id="BloodPressure"
+            cf-questions="Please enter your recent blood pressure readings" />
+
+        <fieldset name="thick" id="thick" cf-questions="Do you know your Skin Thickness?">
+            <label for="yes">Yes
+                <input type="radio" name="cfc-intro_1" id="intro-yes_1" value="yes" />
+            </label>
+            <label for="no">No
+                <input type="radio" name="cfc-intro_1" id="intro-no_1" value="no" />
+            </label>
+        </fieldset>
+        <input type="number" id="SkinThickness" name="SkinThickness" cf-questions="Please enter you skin Thickness"
+            cf-conditional-cfc-intro_1="yes" />
+
+        <input type="number" required cf-error="Please enter a number" name="insulin" id="insulin"
+            cf-questions="Please enter your insulin" />
+
+        <cf-robot-message cf-questions="Let's calculate your BMI now!!"></cf-robot-message>
+
+        <input type="number" required cf-error="Please enter a number" name="weight" id="weight"
+            cf-questions="Please enter your weight (in kgs)" />
+
+        <input type="number" required cf-error="Please enter a number" name="height" id="height"
+            cf-questions="Please enter your height (in cms)" />
+
+        <cf-robot-message cf-questions="Calculating please wait"></cf-robot-message>
+
+        <cf-robot-message cf-questions="Done!!"></cf-robot-message>
+
+        <fieldset cf-questions="Do you know your diabetes pedegree function?">
+            <label for="yes">Yes
+                <input type="radio" name="cfc-intro_2" id="intro-yes_2" value="yes" />
+            </label>
+            <label for="no">No
+                <input type="radio" name="cfc-intro_2" id="intro-no_2" value="no" />
+            </label>
+        </fieldset>
+        <input type="number" id="pedegreeFunction" name="pedegreeFunction"
+            cf-questions="Please enter your diabetes pedegree function" cf-conditional-cfc-intro_2="yes" />
+
+        <input type="number" required cf-error="Please enter a number" name="age" id="age"
+            cf-questions="Please enter your age" />
     </form>
     <div id="cf-context" role="cf-context" cf-context></div>
-
-
-
 </body>
 
 </html>

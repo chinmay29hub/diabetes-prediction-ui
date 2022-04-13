@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.1/dist/conversational-form.min.js"
+        crossorigin></script>
+    <style>
+        #cf-context {
+            width: 100%;
+            height: 100vh;
+        }
+
+        #form {
+            height: 0px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form" cf-form>
+        <cf-robot-message cf-questions="Your report is here"></cf-robot-message>
+        <cf-robot-message cf-questions="Congratulation,You are healthy and have low probability of having diabetes">
+        </cf-robot-message>
+        <cf-robot-message cf-questions="Make sure to stay in the healthy BMI range">
+        </cf-robot-message>
+        <cf-robot-message
+            cf-questions="You can also check your result on our streamlit model to know where you stand in comparison to others in term of health figures">
+        </cf-robot-message>
+        <cf-robot-message cf-questions="Wish you a healthy future">
+        </cf-robot-message>
+        <label for="radio">
+            <input cf-questions="Go back to homepage?" cf-label="Yes" type="radio" value="0" />
+            <a href="/">Yes</a>
+        </label>
+
+    </form>
+    <div id="cf-context" role="cf-context" cf-context></div>
+</body>
+
+</html>
