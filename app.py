@@ -125,4 +125,4 @@ def form():
     return render_template('inner-page.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
